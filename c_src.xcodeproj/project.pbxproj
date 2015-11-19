@@ -62,20 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				C2760E3E1BFE01E0004A2321 /* xcode的github设置.txt */,
-				C2760E3D1BFE01C2004A2321 /* doc */,
 				C2760E331BFDFF8E004A2321 /* main.m */,
 				C2760E3A1BFDFFA6004A2321 /* test.h */,
 				C2760E3B1BFDFFA6004A2321 /* test.m */,
 			);
 			path = c_src;
-			sourceTree = "<group>";
-		};
-		C2760E3D1BFE01C2004A2321 /* doc */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = doc;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
