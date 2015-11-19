@@ -28,7 +28,7 @@
 		C2760E331BFDFF8E004A2321 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2760E3A1BFDFFA6004A2321 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		C2760E3B1BFDFFA6004A2321 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
-		C2760E3E1BFE01E0004A2321 /* xcode的github设置.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "xcode的github设置.txt"; path = "../../../Downloads/xcode的github设置.txt"; sourceTree = "<group>"; };
+		C2760E3F1BFE031F004A2321 /* github设置.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = "github设置.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,10 @@
 		C2760E321BFDFF8E004A2321 /* c_src */ = {
 			isa = PBXGroup;
 			children = (
-				C2760E3E1BFE01E0004A2321 /* xcode的github设置.txt */,
 				C2760E331BFDFF8E004A2321 /* main.m */,
 				C2760E3A1BFDFFA6004A2321 /* test.h */,
 				C2760E3B1BFDFFA6004A2321 /* test.m */,
+				C2760E3F1BFE031F004A2321 /* github设置.strings */,
 			);
 			path = c_src;
 			sourceTree = "<group>";
