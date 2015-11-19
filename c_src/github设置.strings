@@ -1,0 +1,68 @@
+//新建git邮箱、账号、密码
+//新建仓库
+https://github.com/leonsharp2015/c_src.git
+
+//
+在github中，删除仓库。---->仓库的右侧setting:选择del
+
+
+//终端命令行生成mac rsa
+ssh-keygen -t rsa -C "leonsharp2015@sina.com"
+passphase 直接回车（ 如果写密码，为isa的加密）
+
+//将pub(~/.ssh/id_rsa.pub)打开，经内容复制到github里的sshkey(页面账号的右上角)。title为任意字符串，value为复制内容
+
+//终端命令行测试能否通过ssh将本机链接到github
+ssh git@github.com
+
+//xcode提交本地库到github:
+//用户名、密码为github设定的
+//在xcode的project中修改或者新建github的服务器地址
+Xcode中，Source Control->第一项(project/master)->Configure...，之后选Remotes-Add Remote中，
+输入Name（你工程的名字）和Address（github的服务器地址），然后Source Control->Push，选择刚刚新建的链接，Push即可提交到github
+
+
+
+//现在刷新下GitHub主页，你的工程已经添加成功了
+
+//////////////////////////////////////////////////////////终端执行
+
+
+Last login: Wed Nov 18 08:33:17 on ttys000
+lanou3gdeMac-mini-4:~ lanou3g$ ssh-keygen -t rsa -C "leonsharp2015@sina.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/lanou3g/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/lanou3g/.ssh/id_rsa.
+Your public key has been saved in /Users/lanou3g/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:zY9K9T3Td+7SHk0mIQty+o3ZoO7HMPQFl+jxvdmhB8g leonsharp2015@sina.com
+The key's randomart image is:
++---[RSA 2048]----+
+|           . .   |
+|          + o    |
+|        ..+=o..  |
+|        .*.Eo+.o |
+|       .S.=.. +++|
+|        o+.X oo*o|
+|        o+= = =o=|
+|       o .o   .+=|
+|       .+.     ++|
++----[SHA256]-----+
+lanou3gdeMac-mini-4:~ lanou3g$ ssh git@github.com
+The authenticity of host 'github.com (192.30.252.131)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.131' (RSA) to the list of known hosts.
+PTY allocation request failed on channel 0
+Hi leonsharp2015! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+lanou3gdeMac-mini-4:~ lanou3g$
+
+
+
+
+
+
+
