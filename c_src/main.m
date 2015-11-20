@@ -151,9 +151,9 @@ void fun_6()
     printf("finish");
     
 }
-void point_int_array_foo()
+void point_int_array_foo()//一维整型数组
 {
-    //一维数组
+    
     /*1.
      int num=4;
      int *intArray=(int *) malloc(num * sizeof(int));
@@ -168,54 +168,43 @@ void point_int_array_foo()
         printf("%d\n",*(intArray+i));
     }
 }
-void point_foo()
+void point_int_array2_foo()//二维整型数组
 {
-    //int array[][3]={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
-    /*????
-    int *array[2]={{1,2},{7,8}};
-    int *p= array;
-    *(p+0)=1;
-    *(p+1)=2;
-    *p= array+1;
-    *(p+0)=7;
-    *(p+1)=8;
     
-    int temp=array[0][0];
-    for (int i=0; i<3; i++) {
-        printf("%d\n",*(*(array+1)+1));
-    }
-    */
+    /* 1.
+     int (*p1)[2]=(int(*)[2])malloc(sizeof(int)*20);//p指向一维数组的指针
+     *(*p1)=7;
+     *(*p1+1)=8;
+     p1=p1+1;
+     *(*p1)=1;
+     *(*p1+1)=2;
+     //打印
+     p1=p1-1;
+     printf("%d\n",*(*(p1+1)+1));
+   */
     
-    /* //ok
-    int (*p)[2];
-    p=(int(*)[2])malloc(sizeof(int)*20);
-    *(*p)=7;
-    *(*p+1)=8;
-    p=p+1;
-    *(*p)=1;
-    *(*p+1)=2;
-    //打印
-    p=p-1;
-    printf("%d",*(*(p+1)+1));
+    /* 2.
+     int num=5;
+     int **p=(int **)malloc(sizeof(int)*num);
+     for(int i=0;i<2;i++)
+     {
+         *(p+i)=(int *)malloc(sizeof(int)*num);//或者p[i]
+     }
+     
+     *(*p)=7;
+     *(*p+1)=8;
+     p=p+1;
+     *(*p)=1;
+     *(*p+1)=2;
+     //打印
+     p=p-1;
+     printf("%d\n",*(*(p+1)+1));
      */
     
-    /* //ok
-    int num=5;
-    int **p=(int **)malloc(sizeof(int)*num);
-    for(int i=0;i<2;i++)
-    {
-        *(p+i)=(int *)malloc(sizeof(int)*num);//或者p[i]
-    }
-    
-    *(*p)=7;
-    *(*p+1)=8;
-    p=p+1;
-    *(*p)=1;
-    *(*p+1)=2;
-    //打印
-    p=p-1;
-    printf("%d\n",*(*p+1));
-    */
+}
+void point_foo()
+{
+    point_int_array2_foo();
 }
 
 
