@@ -151,6 +151,72 @@ void fun_6()
     printf("finish");
     
 }
+void point_int_array_foo()
+{
+    //一维数组
+    /*1.
+     int num=4;
+     int *intArray=(int *) malloc(num * sizeof(int));
+     *intArray=5;
+     *(intArray+1)=12;
+     *(intArray+2)=33;
+     *(intArray+3)=108;
+     */
+    //2.
+    int intArray[4]={12,45,88,9};
+    for (int i=0; i<3; i++) {
+        printf("%d\n",*(intArray+i));
+    }
+}
+void point_foo()
+{
+    //int array[][3]={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+    /*????
+    int *array[2]={{1,2},{7,8}};
+    int *p= array;
+    *(p+0)=1;
+    *(p+1)=2;
+    *p= array+1;
+    *(p+0)=7;
+    *(p+1)=8;
+    
+    int temp=array[0][0];
+    for (int i=0; i<3; i++) {
+        printf("%d\n",*(*(array+1)+1));
+    }
+    */
+    
+    /* //ok
+    int (*p)[2];
+    p=(int(*)[2])malloc(sizeof(int)*20);
+    *(*p)=7;
+    *(*p+1)=8;
+    p=p+1;
+    *(*p)=1;
+    *(*p+1)=2;
+    //打印
+    p=p-1;
+    printf("%d",*(*(p+1)+1));
+     */
+    
+    /* //ok
+    int num=5;
+    int **p=(int **)malloc(sizeof(int)*num);
+    for(int i=0;i<2;i++)
+    {
+        *(p+i)=(int *)malloc(sizeof(int)*num);//或者p[i]
+    }
+    
+    *(*p)=7;
+    *(*p+1)=8;
+    p=p+1;
+    *(*p)=1;
+    *(*p+1)=2;
+    //打印
+    p=p-1;
+    printf("%d\n",*(*p+1));
+    */
+}
 
 
 int main(int argc, const char * argv[])
@@ -182,6 +248,7 @@ int main(int argc, const char * argv[])
      printf("%s\n",*t2);
      */
     
-    main_paixu();//两种排序方法及运行时间
+    //main_paixu();//两种排序方法及运行时间
+    point_foo();
     return 0;
 }
