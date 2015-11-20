@@ -236,6 +236,30 @@ void point_char_array2_foo()//二维字符串数组
 
 void point_foo()
 {
+    //Created by lanou3g on 15/11/20.讲义
+    //1.定义二维数组,存储3个字符串
+    //char str[3][50]={"iOS","iPad","iMac"};
+    
+    //str本质上是二维数组
+    //str存储的内容为字符数组 (字符串)
+    
+    //str[0] 访问第一个字符数组,相当于第一个字符数组的地址 (首地址)
+    //str[1] 访问第二个字符数组 ,相当于第二个字符数组的地址
+    //str[2] 访问第三个字符数组, 相当于第三个字符数组的地址
+    //printf("%s\n",str[1]);//iPad
+    //printf("%s\n",*(str+1));//iPad
+    
+    /*
+     //2.指针数组,此时str本质上是一维数组，str中存储的是字符指针
+     char *str[3]={"iOS","iPad","iMac"};
+     //str[0]是第一个字符指针 指向常量区字符串"ios"
+     //str[1]是第二个字符指针 指向常量区字符串"ipad"
+     printf("%s\n",str[0]);//iOS
+     str[0]="iPhone";//修改指向，可以
+     */
+    
+    
+    
     point_char_array2_foo();
 }
 
