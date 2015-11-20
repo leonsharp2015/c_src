@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <stdio.h>
+#import <stdlib.h>
 #import "test.h"
 
 void fun_1()
@@ -202,9 +204,39 @@ void point_int_array2_foo()//二维整型数组
      */
     
 }
+void point_char_array2_foo()//二维字符串数组
+{
+    /* //1.
+    char (*p1)[2]=(char(*)[2])malloc(sizeof(char)*20);//p指向一维数组的指针
+    strcpy(p1,"hello");
+    printf("%s\n",p1);
+    p1=p1+1;
+    strcpy(p1,"world");
+    printf("%s\n",p1);
+     */
+    //2.
+    int num=5;
+    char **p=(char **)malloc(sizeof(char)*num);
+    for(int i=0;i<2;i++)
+    {
+        *(p+i)=(char *)malloc(sizeof(char)*num);//或者p[i]
+        char *temp=malloc(sizeof(char)*20);
+        if(i%2==0)
+        {
+            strcpy(temp,"hello");
+        }
+        else
+        {
+            strcpy(temp,"world");
+        }
+         strcpy(*(p+i),temp);
+    }
+    printf("%s,%s\n",*p,*(p+1));
+}
+
 void point_foo()
 {
-    point_int_array2_foo();
+    point_char_array2_foo();
 }
 
 
