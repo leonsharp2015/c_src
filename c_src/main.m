@@ -263,7 +263,32 @@ void point_foo()
     
     
 }
+void malloc_size_foo()//分配内存空间
+{
+    
+    //字符数组
+    char *cp=(char *)malloc(2*sizeof(char));
+    *cp='a';
+    *(cp+1)='b';
+    printf("%s\n",cp);
+    
+    //字符数组
+    char *str=(char *)malloc(sizeof(char)*8);
+    strcpy(str, "iOS");
+    printf("%s\n",str);
+    
+    //字符串数组
+    char **point_1=(char **)malloc(sizeof(char)*3);
+    *(point_1) = (char *)malloc(sizeof(char)*40);
+    *(point_1+1) = (char *)malloc(sizeof(char)*40);
+    *(point_1+2) = (char *)malloc(sizeof(char)*40);
+    strcpy(*point_1, "apple");
+    strcpy(*(point_1+1), "bear");
+    strcpy(*(point_1+2), "abc");
+    printf("%s\n",*(point_1+2));
+    
 
+}
 
 int main(int argc, const char * argv[])
 {
