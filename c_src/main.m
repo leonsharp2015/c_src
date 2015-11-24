@@ -286,8 +286,31 @@ void malloc_size_foo()//分配内存空间
     strcpy(*(point_1+1), "bear");
     strcpy(*(point_1+2), "abc");
     printf("%s\n",*(point_1+2));
-    
+}
 
+void malloc_auto_size()//任意多个字符串输入后，再输出
+{
+    char **array=(char **)malloc(sizeof(char)*1);
+    char temp[1000]="";
+    int count=1;
+    int i=0;
+    
+    printf("请输入字符串(ctl+d结束):\n");
+    while (scanf("%s",&temp)!=EOF)
+    {
+        
+        count++;
+        array=(char **)realloc(array, count);
+        *(array+i)=(char *)malloc(strlen(temp)+1);
+        strcpy(*(array+i), temp);
+        i++;
+        
+    }
+    printf("输入的字符串是:\n");
+    for (int j=0; j<i; j++)
+    {
+        printf("%s,",array[j]);
+    }
 }
 
 int main(int argc, const char * argv[])
